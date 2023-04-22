@@ -1,5 +1,4 @@
 import logo from '../../../public/logo.svg';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Apple, GooglePlay, Instagram, Linkedin, Twitter } from 'react-bootstrap-icons';
 
 const Footer = () => {

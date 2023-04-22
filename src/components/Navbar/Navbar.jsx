@@ -32,7 +32,7 @@ const Navbar = () => {
                 <a
                   className="nav-link active"
                   style={{color: "#606176", fontWeight:"bold"}}
-                  href="#"
+                  href="/login"
                 >
                   Sign In
                 </a>
