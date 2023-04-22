@@ -41,7 +41,7 @@ const Navbar = () => {
                 <a 
                     className="nav-link active text-light rounded" 
                     style={{backgroundColor: "#44039B", fontWeight:"bold"}}
-                    href="#">
+                    href="/register">
                   Sign Up
                 </a>
               </li>
