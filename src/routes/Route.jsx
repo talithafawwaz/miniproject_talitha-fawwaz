@@ -1,5 +1,6 @@
 import LandingPage from "../pages/LandingPage";
 import Login from "../pages/Login";
+import Register from "../pages/Register";
 
 const Routers = [
     {
@@ -9,6 +10,10 @@ const Routers = [
     {
         path: "/login",
         element: <Login/>,
+    },
+    {
+        path: "/register",
+        element: <Register/>,
     }
 ];
 
