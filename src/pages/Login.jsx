@@ -46,6 +46,7 @@ const Login = () => {
             />
           </div>
           <button className="btn my-3" style={{backgroundColor:"#44039B",color:"white"}}>Sign In</button>
+          <p style={{fontSize:"12px", textAlign:"center"}}>Don’t have account yet? Sign Up <a href="/register" style={{fontSize:"12px", textDecoration:"none"}}>here</a></p>
         </div>
       </div>
       <div className="footer">
