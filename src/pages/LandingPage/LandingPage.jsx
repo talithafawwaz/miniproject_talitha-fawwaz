@@ -1,14 +1,14 @@
-import Navbar from "../components/Navbar/Navbar"
-import gambar from '.././assets/gambar.svg'
-import meta from '.././assets/meta.svg'
-import google from '.././assets/google.svg'
-import ibm from '.././assets/ibm.svg'
-import duke from '.././assets/duke.svg'
-import icl from '.././assets/icl.svg'
-import Card from "../components/Card/Card"
-import Review from "../components/Review/Review"
-import Footer from "../components/Footer/Footer"
-import "./LandingPage.css"
+import Navbar from "../../components/Navbar/Navbar"
+import gambar from '../.././assets/gambar.svg'
+import meta from '../.././assets/meta.svg'
+import google from '../.././assets/google.svg'
+import ibm from '../.././assets/ibm.svg'
+import duke from '../.././assets/duke.svg'
+import icl from '../.././assets/icl.svg'
+import Card from "../../components/Card/Card"
+import Review from "../../components/Review/Review"
+import Footer from "../../components/Footer/Footer"
+import "../LandingPage/LandingPage.css"
 import { ArrowRight, ArrowLeft } from 'react-bootstrap-icons';
 
 const LandingPage = () => {

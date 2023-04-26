@@ -1,5 +1,5 @@
-import Footer from "../components/Footer/Footer"
-import "./LandingPage.css"
+import Footer from "../../components/Footer/Footer"
+import "../LandingPage/LandingPage.css"
 
 
 const Register = () => {

@@ -1,7 +1,7 @@
 import { Google } from "react-bootstrap-icons"
-import Footer from "../components/Footer/Footer"
-import "./Login.css"
-import "./LandingPage.css"
+import Footer from "../../components/Footer/Footer"
+import "../Login/Login.css"
+import "../LandingPage/LandingPage.css"
 
 const Login = () => {
   return(
@@ -45,7 +45,8 @@ const Login = () => {
               className="form-control"
             />
           </div>
-          <button className="btn my-3" style={{backgroundColor:"#44039B",color:"white"}}>Sign In</button>
+          <a role="button" href="/dashboard" className="btn my-3" style={{backgroundColor:"#44039B",color:"white"}}>Sign In</a>
+          {/* <button className="btn my-3" style={{backgroundColor:"#44039B",color:"white"}}>Sign In</button> */}
           <p style={{fontSize:"12px", textAlign:"center"}}>Don’t have account yet? Sign Up <a href="/register" style={{fontSize:"12px", textDecoration:"none"}}>here</a></p>
         </div>
       </div>

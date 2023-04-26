@@ -1,0 +1,4 @@
+.navLogin .navbar-nav .nav-link.active {
+    color: #44039B;
+    text-decoration: underline;
+  }

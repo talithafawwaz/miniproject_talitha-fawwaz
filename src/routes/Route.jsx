@@ -1,6 +1,7 @@
-import LandingPage from "../pages/LandingPage";
-import Login from "../pages/Login";
-import Register from "../pages/Register";
+import LandingPage from "../pages/LandingPage/LandingPage";
+import Login from "../pages/Login/Login";
+import Register from "../pages/Register/Register";
+import Dashboard from "../pages/Dashboard/Dashboard";
 
 const Routers = [
     {
@@ -14,6 +15,10 @@ const Routers = [
     {
         path: "/register",
         element: <Register/>,
+    },
+    {
+        path: "/dashboard",
+        element: <Dashboard/>,
     }
 ];
 
