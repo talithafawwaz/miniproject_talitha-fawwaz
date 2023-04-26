@@ -31,7 +31,7 @@ const NavLogin = () => {
                   </a>
                 </li>
                 <li className="nav-item mt-3 mx-3">
-                  <a className="nav-link" href="#">Course</a>
+                  <a className="nav-link" href="/catalog">Course</a>
                 </li>
                 <li className="nav-item mt-3" style={{marginLeft:"19em"}}>
                   <a className="nav-link text-dark" href="#">Talitha</a>
