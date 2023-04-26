@@ -21,3 +21,23 @@
 .copyright{
     margin: 0 10em 0 10em;
 }
+
+.footer-login{
+    position: absolute;
+    width: 90%;
+    height: 60%;
+    left: 2%;
+    top: 43em;
+}
+
+.footer-login a{
+    text-decoration: none;
+}
+
+.my-course{
+    position: absolute;
+    width: 70%;
+    height: 50%;
+    left: 15%;
+    top: 23em;
+}
