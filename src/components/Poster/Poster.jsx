@@ -5,7 +5,7 @@ import course from '../../assets/course.svg'
 const Poster = () => {
     return(
         <>
-            <div className='poster'>
+            <div className='poster-og'>
                 <img className="card-img-top" 
                     style={{ width: "13rem", margin:"10%"}} 
                     src={course} alt="image" 
@@ -18,9 +18,6 @@ const Poster = () => {
                     <p><Clock/> 8 Weeks</p>
                     <p><MenuApp/> Design, Non-coding</p>
                     <p><Flag/> Beginner</p>
-                    <a href="#" className="btn mx-2" style={{ borderColor:"#44039B", fontWeight:"bold", color:"#44039B", width:"80%"}}>
-                        Buy Now
-                    </a>
                 </div>
             </div>
         </>
