@@ -12,7 +12,7 @@ const Card = () => {
                 />
                 <div className="card-body">
                     <p className="card-title" style={{fontSize:"13px", fontWeight:"500"}}>UI/UX Design (Batch 12)</p>
-                    <a href="#" className="btn" style={{ borderColor: "#44039B" ,fontSize:"10px", marginLeft:"50%"}}>
+                    <a href="/detailcourse" className="btn" style={{ borderColor: "#44039B" ,fontSize:"10px", marginLeft:"50%"}}>
                         See detail
                     </a>
                 </div>
