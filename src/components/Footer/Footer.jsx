@@ -75,7 +75,7 @@ const Footer = () => {
                                             <Apple/>
                                         </div>
                                         <div className='col-md-9' style={{textAlign:"left"}}>
-                                            <p style={{fontSize:"8px", marginBottom:"-2px"}}>Download on the</p>
+                                            <p style={{fontSize:"8px", marginBottom:"-2px"}}>Download on</p>
                                             <p style={{fontSize:"12px", marginBottom:"-2px", fontWeight:"500"}}>App Store</p>
                                         </div>
                                     </div>
