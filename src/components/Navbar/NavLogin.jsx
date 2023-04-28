@@ -47,7 +47,7 @@ const NavLogin = () => {
                   </a>
                   <ul className="dropdown-menu">
                     <li>
-                      <a className="dropdown-item" href="#"><Gear/> Setting</a>
+                      <a className="dropdown-item" href="/setting"><Gear/> Setting</a>
                     </li>
                     <li>
                       <a className="dropdown-item text-danger" href="/login"><BoxArrowRight/> Logout</a>
