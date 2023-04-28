@@ -24,7 +24,7 @@ const LandingPage = () => {
                                 <h1 style={{fontWeight:"bold", color: "#44039B", fontSize:"39px"}}>Grow Your Skills online course with Us!</h1>
                                 <p>We strive to educate and collaborate with like-minded businesses 
                                     to make a difference environmentally and socially. Together we can make an impact</p>
-                                <button className="btn btn-warning" style={{fontWeight:"bold", color: "#64542A"}}>Join Now</button>
+                                <a href="/mycourse" className="btn btn-warning" style={{fontWeight:"bold", color: "#64542A"}}>Join Now</a>
                             </div>
                             <div className="col-lg-6">
                                 <img

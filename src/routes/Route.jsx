@@ -7,6 +7,7 @@ import DetailCourse from "../pages/DetailCourse/DetailCourse";
 import Payment from "../pages/Payment/Payment";
 import Confirmation from "../pages/Payment/Confirmation";
 import Setting from "../pages/Setting/Setting";
+import MyCourse from "../pages/MyCourse/MyCourse";
 
 const Routers = [
     {
@@ -44,6 +45,10 @@ const Routers = [
     {
         path: "/setting",
         element: <Setting/>,
+    },
+    {
+        path: "/mycourse",
+        element: <MyCourse/>,
     }
 ];
 
