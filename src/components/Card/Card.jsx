@@ -1,20 +1,24 @@
 import React from "react"
-import course from '../../assets/course.svg'
+import { Link } from "react-router-dom"
 
-const Card = () => {
+const Card = ({card}) => {
 
     return (
         <div className="card-deck mt-10 p-0">
-            <div className="card" style={{ width: "13rem" }}>
+            <div className="card" style={{ width: "13.1rem" }}>
                 <img className="card-img-top" 
                     style={{ width: "13rem"}} 
-                    src={course} alt="image" 
+                    src={card.image} alt="image" 
                 />
                 <div className="card-body">
-                    <p className="card-title" style={{fontSize:"13px", fontWeight:"500"}}>UI/UX Design (Batch 12)</p>
-                    <a href="/detailcourse" className="btn" style={{ borderColor: "#44039B" ,fontSize:"10px", marginLeft:"50%"}}>
+                    <p className="card-title" style={{fontSize:"13px", fontWeight:"500"}}>{card.name}</p>
+                    <Link 
+                    to={"/detailcourse"}
+                    state={{data: card}}
+                    className="btn" 
+                    style={{ borderColor: "#44039B" ,fontSize:"10px", marginLeft:"50%"}}>
                         See detail
-                    </a>
+                    </Link>
                 </div>
             </div>
         </div>

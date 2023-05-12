@@ -1,11 +1,44 @@
+import React, { useState } from "react"
+import { gql, useQuery } from "@apollo/client";
 import NavLogin from "../../components/Navbar/NavLogin"
 import Card from "../../components/Card/Card"
 import Footer from "../../components/Footer/Footer"
 import "../LandingPage/LandingPage.css"
 import "../Login/Login.css"
-import { CaretRightFill } from "react-bootstrap-icons"
+
+
+const SearchCourseList = gql `
+    query CourseList ($name: String) {
+        Course (where: {name: { _ilike: $name } }) {
+            id
+            name
+            mentor
+            image
+            price
+            rating
+            participant
+            duration
+            category
+            level
+            about
+            requirement
+        }
+    }
+`
 
 const Catalog = () => {
+
+    const [search, setSearch] = useState("");
+    const { data } = useQuery(SearchCourseList, {
+		variables: {
+			name: `%${search}%`,
+		},
+	});
+
+	const handleSearch = (e) => {
+		setSearch(e.target.value);
+	};
+
     return(
         <>
             <NavLogin/>
@@ -17,32 +50,20 @@ const Catalog = () => {
                     type="search"
                     placeholder="Search courses with keyboard"
                     aria-label="Search"
+                    onChange={handleSearch}
                 />
-                <button className="btn text-light" type="submit" style={{backgroundColor:"#44039B"}}>
-                    <div className="row">
-                        <div className="col-md-6">Search</div>
-                        <div className="col-md-6"><CaretRightFill/></div>
+                </div>
+            </div>
+            <div className="my-course mt-5 mx-3">                
+                    <div className='row row-cols-2 row-cols-lg-4 g-5 mx-auto'>
+                        {
+                            data?.Course.map((card) => (
+                                <Card key={card.id} card={card} />
+                            ))
+                        }
                     </div>
-                </button>
-                </div>
             </div>
-            <div className="my-course mt-5">
-                <div className="row">
-                    <div className="col-lg-3 mb-3"><Card/></div>
-                    <div className="col-lg-3"><Card/></div>
-                    <div className="col-lg-3"><Card/></div>
-                    <div className="col-lg-3"><Card/></div>
-                    <div className="col-lg-3 mb-3"><Card/></div>
-                    <div className="col-lg-3"><Card/></div>
-                    <div className="col-lg-3"><Card/></div>
-                    <div className="col-lg-3"><Card/></div>
-                    <div className="col-lg-3"><Card/></div>
-                    <div className="col-lg-3"><Card/></div>
-                    <div className="col-lg-3"><Card/></div>
-                    <div className="col-lg-3"><Card/></div>
-                </div>
-            </div>
-            <div className="footer-login" style={{marginTop:"30em"}}>
+            <div className="footer-login" style={{marginTop:"60em"}}>
                 <div className="copyright" ><Footer/></div>
             </div>
         </>

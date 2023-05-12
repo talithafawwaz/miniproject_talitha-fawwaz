@@ -1,10 +1,10 @@
 import React from "react"
 import logo from '../../../public/logo.svg';
-import profile from '../../assets/profile.svg';
 import "./NavLogin.css"
 import { BoxArrowRight, Gear } from "react-bootstrap-icons";
 
 const NavLogin = () => {
+
     return(
       <div className="navLogin">
         <nav className="navbar navbar-expand-lg navbar fixed-top w-100" style={{backgroundColor:"white"}}>
@@ -26,24 +26,21 @@ const NavLogin = () => {
             <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
               <ul className="navbar-nav">
                 <li className="nav-item mt-3 mx-3">
-                  <a className="nav-link active" style={{marginLeft:"20em"}} aria-current="page" href="/dashboard">
+                  <a className="nav-link" style={{marginLeft:"20em"}} aria-current="page" href="/dashboard">
                     Dashboard
                   </a>
                 </li>
                 <li className="nav-item mt-3 mx-3">
                   <a className="nav-link" href="/catalog">Course</a>
                 </li>
-                <li className="nav-item mt-3" style={{marginLeft:"19em"}}>
-                  <a className="nav-link text-dark" href="#">Talitha</a>
-                </li>
-                <li className="nav-item dropdown" style={{marginTop:"3px"}}>
+                <li className="nav-item dropdown" style={{marginTop:"1em", marginLeft:"19em"}}>
                   <a
                     className="nav-link dropdown-toggle"
                     role="button"
                     data-bs-toggle="dropdown"
                     aria-expanded="false"
                   >
-                    <img src={profile} alt="Profile"/>
+                    
                   </a>
                   <ul className="dropdown-menu">
                     <li>
