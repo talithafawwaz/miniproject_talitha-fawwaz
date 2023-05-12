@@ -1,6 +1,5 @@
 import NavLogin from "../../components/Navbar/NavLogin"
 import Footer from "../../components/Footer/Footer"
-import { useLocation } from "react-router-dom"
 import { GetUser } from "../Login/Login"
 import { gql, useMutation, useQuery } from "@apollo/client"
 import { useEffect, useState } from "react"
@@ -18,7 +17,7 @@ const Setting = () => {
     const user = JSON.parse(dataUser)
     console.log(user);
 
-    const {data, loading, error} = useQuery(GetUser, {email: dataUser.email, password: dataUser.password})
+    const {data, loading} = useQuery(GetUser, {email: dataUser.email, password: dataUser.password})
 
     const [editUser] = useMutation(EditUser, {
         refetchQueries: [GetUser]
@@ -26,38 +25,43 @@ const Setting = () => {
     
     const [tempData, setTempData] = useState({})
 
-    const handleUpdate = (data) => {
-        setTempData(data)
+    const handleEdit = (e) => {
+        const { name, value } = e.target;
+        setTempData(prevData => ({
+            ...prevData,
+            [name]: value
+        }));
     }
+    
 
     useEffect(() => {
         console.log(data);
         setTempData(user)
-        // if(!loading && error !== undefined){
-        //     setTempData(data?.User)
-        // }
 
     }, [data])
 
-    const handleChange = (id) => {
+    const handleSave = () => {
         const {fullname, email, password, birthdate, phone, gender, lastedu, lasteduname, address} = tempData;
+        console.log("tempData", tempData);
         editUser({
-          variables:{
-              id: id, 
-              _set: {
-                 fullname: fullname, 
-                 email: email, 
-                 password: password, 
-                 birthdate: birthdate,
-                 phone: phone, 
-                 gender: gender, 
-                 lastedu: lastedu, 
-                 lasteduname: lasteduname, 
-                 address: address
-              }
-          }
+        variables:{
+            id: user.id, 
+            _set: {
+                fullname: fullname, 
+                email: email, 
+                password: password, 
+                birthdate: birthdate,
+                phone: phone, 
+                gender: gender, 
+                lastedu: lastedu, 
+                lasteduname: lasteduname, 
+                address: address
+            }
+        }
         })
-    }    
+        const parsing = JSON.parse(tempData);
+        sessionStorage.setItem("user",JSON.stringify(parsing))   
+    } 
 
     return(
         <>
@@ -73,19 +77,25 @@ const Setting = () => {
                         <input
                             className="form-control mt-1 mb-3"
                             type="text"
+                            name="fullname"
                             value={tempData?.fullname}
+                            onChange={handleEdit}
                         />
                         <label htmlFor="dateborn">Date of Borns</label>
                         <input
                             className="form-control mt-1 mb-3"
                             type="date"
+                            name="birthdate"
                             value={tempData?.birthdate}
+                            onChange={handleEdit}
                         />
                         <label htmlFor="phonenumber">Phone Number</label>
                         <input
                             className="form-control mt-1 mb-3"
                             type="number"
+                            name="phone"
                             value={tempData?.phone}
+                            onChange={handleEdit}
                         />
                         <label htmlFor="gender">Gender</label>
                         <select
@@ -93,6 +103,7 @@ const Setting = () => {
                             id="gender"
                             name="gender"
                             value={tempData?.gender}
+                            onChange={handleEdit}
                         >
                             <option hidden="" />
                             <option value="Women">Women</option>
@@ -104,21 +115,27 @@ const Setting = () => {
                         <input
                             className="form-control mt-1 mb-3"
                             type="text"
+                            name="address"
                             value={tempData?.address}
+                            onChange={handleEdit}
                         />
                         <label htmlFor="lasteducation">Last Education</label>
                         <input
                             className="form-control mt-1 mb-3"
                             type="text"
+                            name="lastedu"
                             value={tempData?.lastedu}
+                            onChange={handleEdit}
                         />
                         <label htmlFor="institutionname">Last Educational Institution Name</label>
                         <input
                             className="form-control mt-1 mb-3"
                             type="text"
+                            name="lasteduname"
                             value={tempData?.lasteduname}
+                            onChange={handleEdit}
                         />
-                        <button onClick={handleChange} className="btn btn-warning mt-4" style={{fontWeight:"bold", color: "#64542A", marginLeft:"85%"}}>Save</button>
+                        <button onClick={handleSave} className="btn btn-warning mt-4" style={{fontWeight:"bold", color: "#64542A", marginLeft:"85%"}}>Save</button>
                     </div>
                 </div>
             }

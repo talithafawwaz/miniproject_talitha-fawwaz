@@ -51,10 +51,6 @@ const Login = () => {
     };
     console.log(data);
     loginDashboard({ variables: { email: loginData.email, password: loginData.password } });
-    // loginDashboard({ variables: { email: loginData.email, password: loginData.password } })
-    // .then(() => sessionStorage.setItem("user", JSON.stringify(user)))
-    // .catch(err => console.log(err))
-    // navigate("/dashboard");
   };
 
   useEffect(() => {

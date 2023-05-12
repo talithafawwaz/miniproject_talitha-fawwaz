@@ -29,23 +29,8 @@ export const GetCourse = gql`
     }
 `
 
-const GetReview = gql`
-query MyQuery {
-    Review {
-      id
-      name
-      highlight
-      description
-      address
-      rating
-      image
-    }
-  }
-`
-
 const LandingPage = () => {
     const { data } = useQuery(GetCourse)
-    const { dataReview } = useQuery(GetReview)
 
     return(
         <>

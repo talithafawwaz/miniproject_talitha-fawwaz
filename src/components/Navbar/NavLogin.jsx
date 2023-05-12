@@ -40,7 +40,7 @@ const NavLogin = () => {
                     data-bs-toggle="dropdown"
                     aria-expanded="false"
                   >
-                    
+                    Account
                   </a>
                   <ul className="dropdown-menu">
                     <li>

@@ -2,21 +2,19 @@ import NavLogin from "../../components/Navbar/NavLogin"
 import Footer from "../../components/Footer/Footer"
 import "../LandingPage/LandingPage.css"
 import "../Login/Login.css"
-import { Link, useLocation } from "react-router-dom"
+import { Link } from "react-router-dom"
 import { useQuery } from "@apollo/client"
 import { GetPayment } from "../../components/Form/Form"
 
 const Dashboard = () => {
     const { data } = useQuery(GetPayment)
     console.log(data);
-    // const user = useLocation()
-    // console.log(user);
 
     return(
         <>
             <NavLogin/>
             <div className="advertise" style={{top:"14%", height: "30%", marginBottom: "15%"}}>
-                <h1 style={{fontWeight:"bold", fontSize:"39px", margin:"4% 0% 0% 15%"}}>Welcome Back !</h1>
+                <h1 style={{fontWeight:"bold", fontSize:"39px", margin:"4% 0% 0% 15%"}}>Welcome To AhaiLearn!</h1>
                 <p style={{margin:"auto 15%"}}>Never stop learning, because life never stops teaching</p>
             </div>
             
