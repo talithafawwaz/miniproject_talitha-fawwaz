@@ -26,6 +26,7 @@ export const GetCourse = gql`
             duration
             category
             level
+            requirement
         }
     }
 `
