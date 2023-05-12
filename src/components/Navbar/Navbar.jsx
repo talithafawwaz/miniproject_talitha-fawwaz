@@ -1,5 +1,6 @@
 import React from "react"
 import logo from '../../../public/logo.svg';
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
     return(
@@ -29,21 +30,21 @@ const Navbar = () => {
           >
             <ul className="navbar-nav">
               <li className="nav-item">
-                <a
+                <Link
                   className="nav-link active"
                   style={{color: "#606176", fontWeight:"bold"}}
-                  href="/login"
+                  to="/login"
                 >
                   Sign In
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a 
+                <Link to="/register"
                     className="nav-link active text-light rounded" 
                     style={{backgroundColor: "#44039B", fontWeight:"bold"}}
-                    href="/register">
+                    >
                   Sign Up
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

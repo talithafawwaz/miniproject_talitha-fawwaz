@@ -5,6 +5,7 @@ import Footer from "../../components/Footer/Footer";
 import "../DetailCourse/DetailCourse.css";
 import check from "../.././assets/check-circle-fill.svg";
 import CourseContext from "../../context/CourseContext";
+import { Link } from "react-router-dom";
 
 const Confirmation = () => {
     const { course, setCourse } = useContext(CourseContext);
@@ -50,13 +51,13 @@ const Confirmation = () => {
                   <img style={{ width: "5em" }} src={check} alt="gambar" />
                 </div>
                 <br />
-                <a
-                  href="/dashboard"
+                <Link
+                  to="/dashboard"
                   className="btn btn-warning w-100"
                   style={{ fontWeight: "bold", color: "#64542A" }}
                 >
                   Go to Dashboard
-                </a>
+                </Link>
               </div>
             </div>
           </div>

@@ -11,6 +11,7 @@ import Footer from "../../components/Footer/Footer"
 import "../LandingPage/LandingPage.css"
 import { ArrowRight, ArrowLeft } from 'react-bootstrap-icons';
 import { gql, useQuery } from "@apollo/client";
+import { Link } from "react-router-dom"
 
 export const GetCourse = gql`
     query CourseList {
@@ -43,7 +44,7 @@ const LandingPage = () => {
                                 <h1 style={{fontWeight:"bold", color: "#44039B", fontSize:"39px"}}>Grow Your Skills online course with Us!</h1>
                                 <p>We strive to educate and collaborate with like-minded businesses 
                                     to make a difference environmentally and socially. Together we can make an impact</p>
-                                <a href="/login" className="btn btn-warning" style={{fontWeight:"bold", color: "#64542A"}}>Join Now</a>
+                                <Link to="/login" className="btn btn-warning" style={{fontWeight:"bold", color: "#64542A"}}>Join Now</Link>
                             </div>
                             <div className="col-lg-6">
                                 <img
@@ -131,7 +132,7 @@ const LandingPage = () => {
                     <div className="advertise" style={{textAlign:"center"}}>
                         <h1 style={{fontWeight:"bold", color: "#44039B", fontSize:"39px", marginTop:"5%"}}>So, what are you waiting for?</h1>
                         <p style={{margin:"3% 0 3% 0"}}>Learn more focused with learning path and code review!</p>
-                        <a href="/register" className="btn btn-warning" style={{fontWeight:"bold", color: "#64542A"}}>Create account</a>
+                        <Link to="/register" className="btn btn-warning" style={{fontWeight:"bold", color: "#64542A"}}>Create account</Link>
                     </div>
                     <div className="footer" style={{marginTop:"20em"}}>
                         <Footer/>

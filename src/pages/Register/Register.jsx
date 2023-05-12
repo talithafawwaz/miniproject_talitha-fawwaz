@@ -4,7 +4,7 @@ import { GetUser } from "../Login/Login";
 import "../LandingPage/LandingPage.css"
 import { useState } from "react";
 import uuid from "react-uuid";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Register = () => {
   const navigate = useNavigate()
@@ -98,8 +98,8 @@ const handleSubmit = (e) => {
               onChange={handleInput}
             />
           </div>
-          <button role="button" onClick={handleSubmit} className="btn my-3" style={{backgroundColor:"#44039B",color:"white"}}>Sign Up</button>
-          <p style={{fontSize:"12px", textAlign:"center"}}>Already have account ? Sign In <a href="/login" style={{fontSize:"12px", textDecoration:"none"}}>here</a></p>
+          <Link role="button" onClick={handleSubmit} className="btn my-3" style={{backgroundColor:"#44039B",color:"white"}}>Sign Up</Link>
+          <p style={{fontSize:"12px", textAlign:"center"}}>Already have account ? Sign In <Link to="/login" style={{fontSize:"12px", textDecoration:"none"}}>here</Link></p>
         </div>
       </div>
       <div className="footer">

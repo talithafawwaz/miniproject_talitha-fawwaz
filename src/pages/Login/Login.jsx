@@ -1,7 +1,7 @@
 import Footer from "../../components/Footer/Footer";
 import "../Login/Login.css";
 import "../LandingPage/LandingPage.css";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { gql, useLazyQuery } from "@apollo/client";
 
@@ -99,7 +99,7 @@ const Login = () => {
             />
           </div>
           <p>{errorMessage}</p>
-          <button role="button" onClick={handleSubmit} state={{data:data}} className="btn my-3" style={{backgroundColor:"#44039B",color:"white"}}>Sign In</button>
+          <Link role="button" onClick={handleSubmit} state={{data:data}} className="btn my-3" style={{backgroundColor:"#44039B",color:"white"}}>Sign In</Link>
           <p style={{fontSize:"12px", textAlign:"center"}}>Don’t have account yet? Sign Up <a href="/register" style={{fontSize:"12px", textDecoration:"none"}}>here</a></p>
         </div>
       </div>

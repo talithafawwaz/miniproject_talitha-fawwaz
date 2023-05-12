@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { gql, useMutation, useQuery } from "@apollo/client";
 import uuid from "react-uuid";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export const GetPayment = gql`
         query PaymentList {
@@ -267,7 +267,7 @@ const Form = (data) => {
           </div>
           <div className="row">
             <div className="col-md-4">
-              <a
+              <Link
                 onClick={handleGoBack}
                 className="btn mx-4 my-3"
                 style={{
@@ -278,14 +278,13 @@ const Form = (data) => {
                 }}
               >
                 Cancel
-              </a>
+              </Link>
             </div>
             <div className="col-md-8">
-              <button
+              <Link
                 className="btn mx-4 my-3"
                 data-bs-toggle="modal"
                 data-bs-target="#successpayment"
-                // type="submit"
                 style={{
                   backgroundColor: "#44039B",
                   fontWeight: "bold",
@@ -295,7 +294,7 @@ const Form = (data) => {
                 onClick={handleSubmit}
               >
                 Confirm
-              </button>
+              </Link>
             </div>
           </div>
         </form>

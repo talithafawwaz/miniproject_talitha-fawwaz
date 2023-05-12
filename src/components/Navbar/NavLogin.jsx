@@ -2,6 +2,7 @@ import React from "react"
 import logo from '../../../public/logo.svg';
 import "./NavLogin.css"
 import { BoxArrowRight, Gear } from "react-bootstrap-icons";
+import { Link } from "react-router-dom";
 
 const NavLogin = () => {
 
@@ -26,28 +27,28 @@ const NavLogin = () => {
             <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
               <ul className="navbar-nav">
                 <li className="nav-item mt-3 mx-3">
-                  <a className="nav-link" style={{marginLeft:"20em"}} aria-current="page" href="/dashboard">
+                  <Link className="nav-link" style={{marginLeft:"20em"}} aria-current="page" to="/dashboard">
                     Dashboard
-                  </a>
+                  </Link>
                 </li>
                 <li className="nav-item mt-3 mx-3">
-                  <a className="nav-link" href="/catalog">Course</a>
+                  <Link className="nav-link" to="/catalog">Course</Link>
                 </li>
                 <li className="nav-item dropdown" style={{marginTop:"1em", marginLeft:"19em"}}>
-                  <a
+                  <Link
                     className="nav-link dropdown-toggle"
                     role="button"
                     data-bs-toggle="dropdown"
                     aria-expanded="false"
                   >
                     Account
-                  </a>
+                  </Link>
                   <ul className="dropdown-menu">
                     <li>
-                      <a className="dropdown-item" href="/setting"><Gear/> Setting</a>
+                      <Link className="dropdown-item" to="/setting"><Gear/> Setting</Link>
                     </li>
                     <li>
-                      <a className="dropdown-item text-danger" href="/login"><BoxArrowRight/> Logout</a>
+                      <Link className="dropdown-item text-danger" to="/login"><BoxArrowRight/> Logout</Link>
                     </li>
                   </ul>
                 </li>
