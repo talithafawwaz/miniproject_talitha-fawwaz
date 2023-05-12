@@ -100,7 +100,7 @@ const Login = () => {
           </div>
           <p>{errorMessage}</p>
           <Link role="button" onClick={handleSubmit} state={{data:data}} className="btn my-3" style={{backgroundColor:"#44039B",color:"white"}}>Sign In</Link>
-          <p style={{fontSize:"12px", textAlign:"center"}}>Don’t have account yet? Sign Up <a href="/register" style={{fontSize:"12px", textDecoration:"none"}}>here</a></p>
+          <p style={{fontSize:"12px", textAlign:"center"}}>Don’t have account yet? Sign Up <Link to="/register" style={{fontSize:"12px", textDecoration:"none"}}>here</Link></p>
         </div>
       </div>
       <div className="footer">
