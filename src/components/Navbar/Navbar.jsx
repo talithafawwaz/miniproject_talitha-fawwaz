@@ -3,7 +3,7 @@ import logo from '../../../public/logo.svg';
 
 const Navbar = () => {
     return(
-      <nav className="navbar navbar-expand-lg navbar fixed-top ">
+      <nav className="navbar navbar-expand-lg navbar fixed-top " style={{backgroundColor:"white"}}>
         <div className="container-fluid">
           <a className="navbar-brand active text-dark" href="#">
             <img

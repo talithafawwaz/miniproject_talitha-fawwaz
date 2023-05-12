@@ -1,8 +1,61 @@
+import { gql, useMutation, useQuery } from "@apollo/client";
 import Footer from "../../components/Footer/Footer"
+import { GetUser } from "../Login/Login";
 import "../LandingPage/LandingPage.css"
-
+import { useState } from "react";
+import uuid from "react-uuid";
+import { useNavigate } from "react-router-dom";
 
 const Register = () => {
+  const navigate = useNavigate()
+  const [register, setRegister] = useState({
+    id:"",
+    fullname: "",
+    email: "",
+    password: ""
+});
+
+console.log(Register)
+
+const handleInput = e => {
+    const name = e.target.name;
+    const value = e.target.value;
+    setRegister(prev => ({
+        ...prev,
+        [name]: value
+    }));
+}
+
+const InsertRegister = gql`
+mutation MyQuery ($object: User_insert_input!) {
+    insert_User_one(object: $object){
+        id
+        fullname
+        email
+        password
+    }
+}
+`
+
+const [insertRegister] = useMutation(InsertRegister, {
+  refetchQueries: [GetUser]
+});
+  
+
+const handleSubmit = (e) => {
+    e.preventDefault();
+    const id = uuid();
+    const registerData = {
+        id:id,
+        fullname: register.fullname,
+        email: register.email,
+        password: register.password
+    };
+    insertRegister({ variables: { object: registerData } });
+
+    navigate("/login");
+};
+
     return(
         <>
         <div className="content">
@@ -17,6 +70,8 @@ const Register = () => {
               id="fullname"
               placeholder="Enter Your Full Name"
               className="form-control"
+              value={register.fullname}
+              onChange={handleInput}
             />
           </div>
           <div className="form-outline mb-4">
@@ -27,6 +82,8 @@ const Register = () => {
               id="email"
               placeholder="Enter Your Email"
               className="form-control"
+              value={register.email}
+              onChange={handleInput}
             />
           </div>
           <div className="form-outline mb-4">
@@ -37,9 +94,11 @@ const Register = () => {
               id="password"
               placeholder="Enter Your Password"
               className="form-control"
+              value={register.password}
+              onChange={handleInput}
             />
           </div>
-          <a role="button" href="/login" className="btn my-3" style={{backgroundColor:"#44039B",color:"white"}}>Sign Up</a>
+          <button role="button" onClick={handleSubmit} className="btn my-3" style={{backgroundColor:"#44039B",color:"white"}}>Sign Up</button>
           <p style={{fontSize:"12px", textAlign:"center"}}>Already have account ? Sign In <a href="/login" style={{fontSize:"12px", textDecoration:"none"}}>here</a></p>
         </div>
       </div>
